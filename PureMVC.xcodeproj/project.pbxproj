@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B64B93742049579D00E14111 /* DetailsFlowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64B93732049579D00E14111 /* DetailsFlowViewController.swift */; };
+		B64B9378204C77C800E14111 /* MasterFlowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64B9377204C77C800E14111 /* MasterFlowViewController.swift */; };
 		B6B4ACE820448EDD002E27AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B4ACE720448EDD002E27AA /* AppDelegate.swift */; };
 		B6B4ACEA20448EDD002E27AA /* MainFlowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B4ACE920448EDD002E27AA /* MainFlowViewController.swift */; };
 		B6B4ACED20448EDD002E27AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6B4ACEB20448EDD002E27AA /* Main.storyboard */; };
@@ -30,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		B64B93732049579D00E14111 /* DetailsFlowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsFlowViewController.swift; sourceTree = "<group>"; };
+		B64B9377204C77C800E14111 /* MasterFlowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterFlowViewController.swift; sourceTree = "<group>"; };
 		B6B4ACE420448EDD002E27AA /* PureMVC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PureMVC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6B4ACE720448EDD002E27AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6B4ACE920448EDD002E27AA /* MainFlowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowViewController.swift; sourceTree = "<group>"; };
@@ -97,7 +99,6 @@
 			isa = PBXGroup;
 			children = (
 				B6B4ACE920448EDD002E27AA /* MainFlowViewController.swift */,
-				B6B4AD112045B520002E27AA /* Master */,
 				B6B4AD132045B536002E27AA /* SignIn */,
 			);
 			path = Main;
@@ -108,6 +109,7 @@
 			children = (
 				B6B4AD142045B546002E27AA /* Common */,
 				B6B4AD0E2045B4BA002E27AA /* Main */,
+				B6B4AD112045B520002E27AA /* Master */,
 				B6B4AD122045B52E002E27AA /* Details */,
 				B6B4AD152045B6D5002E27AA /* Settings */,
 			);
@@ -117,6 +119,7 @@
 		B6B4AD112045B520002E27AA /* Master */ = {
 			isa = PBXGroup;
 			children = (
+				B64B9377204C77C800E14111 /* MasterFlowViewController.swift */,
 				B6B4ACF92044985E002E27AA /* MasterTableViewController.swift */,
 				B6B4AD042044A470002E27AA /* MasterTableViewModel.swift */,
 			);
@@ -250,6 +253,7 @@
 				B6B4AD072044A705002E27AA /* DetailsViewModel.swift in Sources */,
 				B6B4AD1B2047F7B0002E27AA /* SettingsFlowViewController.swift in Sources */,
 				B6B4AD192045B7AC002E27AA /* SettingsViewModel.swift in Sources */,
+				B64B9378204C77C800E14111 /* MasterFlowViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
