@@ -23,13 +23,13 @@ class MainFlowViewController: UIViewController {
     
     private func dispatchUI() {
         if session.state == .signedOut {
-            self.runSignInFlow()
+            self.showSignInView()
         } else {
-            self.runMasterFlow()
+            self.showMasterView()
         }
     }
     
-    private func runMasterFlow() {
+    private func showMasterView() {
         let masterViewController = ViewControllersFactory.masterViewController
         let viewModel = MasterTableViewModel()
         viewModel.onSelectRow = { indexPath in
@@ -44,7 +44,7 @@ class MainFlowViewController: UIViewController {
         self.transition(to: navigationController)
     }
     
-    private func runSignInFlow() {
+    private func showSignInView() {
         let signIn = ViewControllersFactory.signInViewController
         let viewModel = SignInViewModel()
         viewModel.onSignIn = { [weak self] in
