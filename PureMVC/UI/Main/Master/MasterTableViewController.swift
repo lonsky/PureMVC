@@ -15,7 +15,7 @@ class MasterTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "Master"
+        self.title = self.viewModel.title
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
 

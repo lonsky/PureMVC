@@ -13,6 +13,10 @@ class MasterTableViewModel {
     var onSelectRow: ((_ indexPath: IndexPath) -> Void)?
     var onShowSettings: (() -> Void)?
     
+    var title: String {
+        return "Master"
+    }
+
     var numberOfRows: Int {
         return 10
     }
