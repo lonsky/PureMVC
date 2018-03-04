@@ -10,9 +10,29 @@ import UIKit
 
 class MasterViewModel: NSObject {
 
+    enum State {
+        case list
+        case loading
+        case error
+    }
+    
+    private var state: State = .loading {
+        didSet {
+            self.onStateDidChange?(state)
+        }
+    }
+
+    var onStateDidChange: ((_ state: State) -> Void)?
     var onShowSettings: (() -> Void)?
     
     var title: String {
         return "Master"
+    }
+    
+    func loadContent() {
+        self.state = .loading
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
+            self?.state = .list
+        }
     }
 }

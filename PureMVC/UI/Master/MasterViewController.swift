@@ -16,6 +16,8 @@ class MasterViewController: UIViewController {
         super.viewDidLoad()
 
         self.title = self.viewModel.title
+        
+        self.viewModel.loadContent()
     }
 
     @IBAction func onSettinsDidPress(_ sender: Any) {

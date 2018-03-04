@@ -9,18 +9,6 @@
 import UIKit
 
 class MasterFlowViewController: UIViewController {
-
-    private enum State {
-        case list
-        case loading
-        case error
-    }
-    
-    private var state: State = .loading {
-        didSet {
-            self.updateContent()
-        }
-    }
     
     private var masterViewController: MasterViewController!
     let session: Session
@@ -42,17 +30,15 @@ class MasterFlowViewController: UIViewController {
         viewModel.onShowSettings = { [weak self] in
             self?.runSettingsFlow()
         }
+        viewModel.onStateDidChange = { [weak self] state in
+            self?.updateContent(for: state)
+        }
         self.masterViewController.viewModel = viewModel
         self.embed(navigationController)
-        
-        self.state = .loading
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
-            self?.state = .list
-        }
     }
     
-    private func updateContent() {
-        switch self.state {
+    private func updateContent(for state: MasterViewModel.State) {
+        switch state {
         case .loading:
             self.showActivityView()
         case .list:
