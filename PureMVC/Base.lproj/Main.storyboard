@@ -25,6 +25,29 @@
             </objects>
             <point key="canvasLocation" x="433" y="45"/>
         </scene>
+        <!--Title-->
+        <scene sceneID="1lo-wR-utt">
+            <objects>
+                <viewController storyboardIdentifier="master" id="sgw-GX-EbJ" customClass="MasterViewController" customModule="PureMVC" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9uX-92-9bc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Id7-t6-K9a"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="XPk-Ep-dv3">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="bXp-8l-5aG">
+                            <connections>
+                                <action selector="onSettinsDidPress:" destination="sgw-GX-EbJ" id="XdY-kP-JCz"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qYM-ZV-GBV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1305" y="-229"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="FJT-aa-DSB">
             <objects>
@@ -94,10 +117,10 @@
             </objects>
             <point key="canvasLocation" x="1296" y="-937"/>
         </scene>
-        <!--Title-->
+        <!--List View Controller-->
         <scene sceneID="gtP-Xw-yTK">
             <objects>
-                <tableViewController storyboardIdentifier="master" id="d8X-2c-2S0" customClass="MasterTableViewController" customModule="PureMVC" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="list" id="d8X-2c-2S0" customClass="ListViewController" customModule="PureMVC" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="exa-IS-rSN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -107,18 +130,10 @@
                             <outlet property="delegate" destination="d8X-2c-2S0" id="1hG-bt-80S"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Title" id="scl-aM-bx1">
-                        <barButtonItem key="rightBarButtonItem" title="Settings" id="4nA-WP-XuA">
-                            <connections>
-                                <action selector="onSettingsDidPress:" destination="d8X-2c-2S0" id="uLw-zw-FYk"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yvG-ob-a8d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1311" y="-252"/>
+            <point key="canvasLocation" x="2372" y="-235"/>
         </scene>
         <!--Sign In View Controller-->
         <scene sceneID="LTh-gJ-Utz">

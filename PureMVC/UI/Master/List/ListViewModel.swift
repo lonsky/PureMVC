@@ -1,5 +1,5 @@
 //
-//  MasterTableViewModel.swift
+//  ListViewModel.swift
 //  PureMVC
 //
 //  Created by Alexander Lonsky on 26/02/2018.
@@ -8,14 +8,9 @@
 
 import Foundation
 
-class MasterTableViewModel {
+class ListViewModel {
     
     var onSelectRow: ((_ indexPath: IndexPath) -> Void)?
-    var onShowSettings: (() -> Void)?
-    
-    var title: String {
-        return "Master"
-    }
 
     var numberOfRows: Int {
         return 10

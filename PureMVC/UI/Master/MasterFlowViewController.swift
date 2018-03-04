@@ -18,10 +18,11 @@ class MasterFlowViewController: UIViewController {
     
     private var state: State = .loading {
         didSet {
-            self.updateUI()
+            self.updateContent()
         }
     }
     
+    private var masterViewController: MasterViewController!
     let session: Session
     init(_ session: Session) {
         self.session = session
@@ -35,35 +36,40 @@ class MasterFlowViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.masterViewController = ViewControllersFactory.masterViewController
+        let navigationController = UINavigationController(rootViewController: self.masterViewController)
+        let viewModel = MasterViewModel()
+        viewModel.onShowSettings = { [weak self] in
+            self?.runSettingsFlow()
+        }
+        self.masterViewController.viewModel = viewModel
+        self.embed(navigationController)
+        
         self.state = .loading
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
             self?.state = .list
         }
     }
     
-    private func updateUI() {
+    private func updateContent() {
         switch self.state {
         case .loading:
             self.showActivityView()
         case .list:
-            self.showMasterView()
+            self.showListView()
         case .error:
             self.showErrorView()
         }
     }
     
-    private func showMasterView() {
-        let masterViewController = ViewControllersFactory.masterViewController
-        let navigationController = UINavigationController(rootViewController: masterViewController)
-        let viewModel = MasterTableViewModel()
+    private func showListView() {
+        let list = ViewControllersFactory.listViewController
+        let viewModel = ListViewModel()
         viewModel.onSelectRow = { [weak self] indexPath in
-            self?.runDetailsFlow(for: indexPath, navigationController: navigationController)
+            self?.runDetailsFlow(for: indexPath)
         }
-        viewModel.onShowSettings = { [weak self] in
-            self?.runSettingsFlow()
-        }
-        masterViewController.viewModel = viewModel
-        self.transition(to: navigationController)
+        list.viewModel = viewModel
+        self.masterViewController.transition(to: list)
     }
     
     private func runSettingsFlow() {
@@ -80,15 +86,15 @@ class MasterFlowViewController: UIViewController {
     
     private func showActivityView() {
         let activity = ViewControllersFactory.activityViewController
-        self.transition(to: activity)
+        self.masterViewController.transition(to: activity)
     }
     
     private func showErrorView() {
         // TODO:
     }
     
-    private func runDetailsFlow(for indexPath: IndexPath, navigationController: UINavigationController) {
+    private func runDetailsFlow(for indexPath: IndexPath) {
         let detailsFlow = DetailsFlowViewController(with: indexPath, session: self.session)
-        navigationController.pushViewController(detailsFlow, animated: true)
+        self.masterViewController.navigationController?.pushViewController(detailsFlow, animated: true)
     }
 }
