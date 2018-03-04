@@ -34,7 +34,7 @@ class DetailsFlowViewController: UIViewController {
         detailsViewController.viewModel = viewModel
         self.embed(detailsViewController)
         
-        // TODO:
+        // FIXME: how to handle navigation item of embedded VC?
         self.navigationItem.title = detailsViewController.navigationItem.title
     }
     

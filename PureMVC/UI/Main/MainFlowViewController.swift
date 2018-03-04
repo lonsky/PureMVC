@@ -10,37 +10,60 @@ import UIKit
 
 class MainFlowViewController: UIViewController {
 
+    private enum State {
+        case signIn
+        case list
+        case loading
+        case error
+    }
+    
     private let session = Session()
+    private var state: State = .signIn {
+        didSet {
+            self.dispatchUI()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.session.onStateDidChange = { [weak self] _ in
-            self?.dispatchUI()
+        self.session.onStateDidChange = { [weak self] newState in
+            if newState == .signedIn {
+                self?.state = .list
+            } else {
+                self?.state = .signIn
+            }
         }
         self.dispatchUI()
     }
     
     private func dispatchUI() {
-        if session.state == .signedOut {
+        switch self.state {
+        case .signIn:
             self.showSignInView()
-        } else {
+            
+        case .list:
             self.showMasterView()
+
+        case .loading:
+            self.showActivityView()
+            
+        case .error:
+            self.showErrorView()
         }
     }
     
     private func showMasterView() {
         let masterViewController = ViewControllersFactory.masterViewController
+        let navigationController = UINavigationController(rootViewController: masterViewController)
         let viewModel = MasterTableViewModel()
-        viewModel.onSelectRow = { indexPath in
-            let detailsFlow = DetailsFlowViewController(with: indexPath, session: self.session)
-            masterViewController.navigationController?.pushViewController(detailsFlow, animated: true)
+        viewModel.onSelectRow = { [weak self] indexPath in
+            self?.runDetailsFlow(for: indexPath, navigationController: navigationController)
         }
         viewModel.onShowSettings = { [weak self] in
             self?.runSettingsFlow()
         }
         masterViewController.viewModel = viewModel
-        let navigationController = UINavigationController(rootViewController: masterViewController)
         self.transition(to: navigationController)
     }
     
@@ -48,10 +71,22 @@ class MainFlowViewController: UIViewController {
         let signIn = ViewControllersFactory.signInViewController
         let viewModel = SignInViewModel()
         viewModel.onSignIn = { [weak self] in
-            self?.session.state = .signedIn
+            self?.state = .loading
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                self?.session.state = .signedIn
+            }
         }
         signIn.viewModel = viewModel
         self.transition(to: signIn)
+    }
+    
+    private func showActivityView() {
+        let activity = ViewControllersFactory.activityViewController
+        self.transition(to: activity)
+    }
+    
+    private func showErrorView() {
+        // TODO:
     }
     
     private func runSettingsFlow() {
@@ -64,6 +99,11 @@ class MainFlowViewController: UIViewController {
             self?.dismiss(animated: true)
         }
         self.present(settingsFlow, animated: true)
+    }
+    
+    private func runDetailsFlow(for indexPath: IndexPath, navigationController: UINavigationController) {
+        let detailsFlow = DetailsFlowViewController(with: indexPath, session: self.session)
+        navigationController.pushViewController(detailsFlow, animated: true)
     }
 }
 

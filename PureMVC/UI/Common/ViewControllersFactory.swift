@@ -35,4 +35,8 @@ struct ViewControllersFactory {
     static var settingsViewController: SettingsViewController {
         return self.storyboard.instantiateViewController(withIdentifier: "settings") as! SettingsViewController
     }
+    
+    static var activityViewController: UIViewController {
+        return self.storyboard.instantiateViewController(withIdentifier: "activity")
+    }
 }
