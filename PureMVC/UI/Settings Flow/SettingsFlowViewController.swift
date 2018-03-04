@@ -39,7 +39,7 @@ class SettingsFlowViewController: UIViewController {
         } else {
             self.embed(settings)
             
-            // TODO:
+            // FIXME: how to handle navigation item of embedded VC?
             self.navigationItem.title = settings.navigationItem.title
         }
     }
