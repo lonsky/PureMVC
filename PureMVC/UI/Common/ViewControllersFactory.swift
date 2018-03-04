@@ -20,8 +20,16 @@ struct ViewControllersFactory {
         return storyboard
     }()
     
-    static var masterViewController: MasterTableViewController {
-       return self.storyboard.instantiateViewController(withIdentifier: "master") as! MasterTableViewController
+    static var masterViewController: MasterViewController {
+       return self.storyboard.instantiateViewController(withIdentifier: "master") as! MasterViewController
+    }
+    
+    static var listViewController: ListViewController {
+        return self.storyboard.instantiateViewController(withIdentifier: "list") as! ListViewController
+    }
+    
+    static var errorViewController: ErrorViewController {
+        return self.storyboard.instantiateViewController(withIdentifier: "error") as! ErrorViewController
     }
     
     static var detailsViewController: DetailsViewController {

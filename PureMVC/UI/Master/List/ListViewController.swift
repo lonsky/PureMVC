@@ -1,5 +1,5 @@
 //
-//  MasterTableViewController.swift
+//  ListViewController.swift
 //  PureMVC
 //
 //  Created by Alexander Lonsky on 26/02/2018.
@@ -8,21 +8,16 @@
 
 import UIKit
 
-class MasterTableViewController: UITableViewController {
+class ListViewController: UITableViewController {
 
-    var viewModel: MasterTableViewModel!
+    var viewModel: ListViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = self.viewModel.title
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
 
-    @IBAction func onSettingsDidPress(_ sender: Any) {
-        self.viewModel.onShowSettings?();
-    }
-    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.viewModel.numberOfRows
     }
