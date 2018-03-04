@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  AppFlowViewController.swift
 //  PureMVC
 //
 //  Created by Alexander Lonsky on 26/02/2018.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainFlowViewController: UIViewController {
+class AppFlowViewController: UIViewController {
 
     private let session = Session()
     
