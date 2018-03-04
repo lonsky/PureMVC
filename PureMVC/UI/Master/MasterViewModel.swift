@@ -32,7 +32,7 @@ class MasterViewModel: NSObject {
     func loadContent() {
         self.state = .loading
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
-            self?.state = .list
+            self?.state = arc4random_uniform(2) == 0 ? .list : .error
         }
     }
 }

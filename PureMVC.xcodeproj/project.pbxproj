@@ -11,6 +11,8 @@
 		B64B9378204C77C800E14111 /* MasterFlowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64B9377204C77C800E14111 /* MasterFlowViewController.swift */; };
 		B64B937A204C84AE00E14111 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64B9379204C84AE00E14111 /* MasterViewController.swift */; };
 		B64B937C204C85A500E14111 /* MasterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64B937B204C85A500E14111 /* MasterViewModel.swift */; };
+		B64B9381204C8C6600E14111 /* ErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64B9380204C8C6600E14111 /* ErrorViewController.swift */; };
+		B64B9383204C8C7F00E14111 /* ErrorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64B9382204C8C7F00E14111 /* ErrorViewModel.swift */; };
 		B6B4ACE820448EDD002E27AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B4ACE720448EDD002E27AA /* AppDelegate.swift */; };
 		B6B4ACEA20448EDD002E27AA /* MainFlowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B4ACE920448EDD002E27AA /* MainFlowViewController.swift */; };
 		B6B4ACED20448EDD002E27AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6B4ACEB20448EDD002E27AA /* Main.storyboard */; };
@@ -36,6 +38,8 @@
 		B64B9377204C77C800E14111 /* MasterFlowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterFlowViewController.swift; sourceTree = "<group>"; };
 		B64B9379204C84AE00E14111 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 		B64B937B204C85A500E14111 /* MasterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewModel.swift; sourceTree = "<group>"; };
+		B64B9380204C8C6600E14111 /* ErrorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewController.swift; sourceTree = "<group>"; };
+		B64B9382204C8C7F00E14111 /* ErrorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewModel.swift; sourceTree = "<group>"; };
 		B6B4ACE420448EDD002E27AA /* PureMVC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PureMVC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6B4ACE720448EDD002E27AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6B4ACE920448EDD002E27AA /* MainFlowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +85,8 @@
 		B64B937E204C888600E14111 /* Error */ = {
 			isa = PBXGroup;
 			children = (
+				B64B9380204C8C6600E14111 /* ErrorViewController.swift */,
+				B64B9382204C8C7F00E14111 /* ErrorViewModel.swift */,
 			);
 			path = Error;
 			sourceTree = "<group>";
@@ -268,6 +274,7 @@
 				B6B4ACE820448EDD002E27AA /* AppDelegate.swift in Sources */,
 				B6B4ACFC2044988B002E27AA /* DetailsViewController.swift in Sources */,
 				B64B93742049579D00E14111 /* DetailsFlowViewController.swift in Sources */,
+				B64B9383204C8C7F00E14111 /* ErrorViewModel.swift in Sources */,
 				B6B4AD052044A470002E27AA /* ListViewModel.swift in Sources */,
 				B6B4AD0D2045A7E9002E27AA /* SignInViewModel.swift in Sources */,
 				B6B4ACFE20449A2C002E27AA /* UIView+Embedding.swift in Sources */,
@@ -276,6 +283,7 @@
 				B6B4AD072044A705002E27AA /* DetailsViewModel.swift in Sources */,
 				B6B4AD1B2047F7B0002E27AA /* SettingsFlowViewController.swift in Sources */,
 				B6B4AD192045B7AC002E27AA /* SettingsViewModel.swift in Sources */,
+				B64B9381204C8C6600E14111 /* ErrorViewController.swift in Sources */,
 				B64B937A204C84AE00E14111 /* MasterViewController.swift in Sources */,
 				B64B9378204C77C800E14111 /* MasterFlowViewController.swift in Sources */,
 			);

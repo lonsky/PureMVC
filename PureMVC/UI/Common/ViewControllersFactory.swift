@@ -28,6 +28,10 @@ struct ViewControllersFactory {
         return self.storyboard.instantiateViewController(withIdentifier: "list") as! ListViewController
     }
     
+    static var errorViewController: ErrorViewController {
+        return self.storyboard.instantiateViewController(withIdentifier: "error") as! ErrorViewController
+    }
+    
     static var detailsViewController: DetailsViewController {
         return self.storyboard.instantiateViewController(withIdentifier: "details") as! DetailsViewController
     }

@@ -76,7 +76,13 @@ class MasterFlowViewController: UIViewController {
     }
     
     private func showErrorView() {
-        // TODO:
+        let error = ViewControllersFactory.errorViewController
+        let viewModel = ErrorViewModel()
+        viewModel.onRetryDidPress = { [weak self] in
+            self?.masterViewController.viewModel.loadContent()
+        }
+        error.viewModel = viewModel
+        self.masterViewController.transition(to: error)
     }
     
     private func runDetailsFlow(for indexPath: IndexPath) {
