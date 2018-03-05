@@ -3,6 +3,8 @@ Test implementation of application architecture based on classic MVC pattern
 
 Inspired by [Dave DeLong](https://davedelong.com/blog/2017/11/06/a-better-mvc-part-1-the-problems/)
 
+![Alt text](diagram.png?raw=true "Diagram")
+
 This architecture approach is very similar to Coordinator pattern.
 Here, instead of coordinator, for every screen you have Flow view controller.
 This view controller is responsible for: 
