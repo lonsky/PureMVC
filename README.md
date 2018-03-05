@@ -15,6 +15,7 @@ Main advantage is you don't have to maintain parallel hierarchy: UIKit does it f
 Only flow controller knows about navigation (similar to coordinator).
 Content view controller notifies flow controller about user actions and/or state changes and
 flow controller decides what to do next.
+You can easily start using this approach in existing project or mix it with other approaches/patterns.
 
 Inside flow controller you can embed any scene: UIViewController, UINavigationController or UISplitViewController.
 Flow controller can check user interface idiom and choose what view container to embed or you can have different
