@@ -32,7 +32,9 @@ class ListViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+        if self.viewModel.shouldResetSelection {
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
         
         self.viewModel.onSelectRow?(indexPath)
     }

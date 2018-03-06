@@ -12,6 +12,8 @@ class ListViewModel {
     
     var onSelectRow: ((_ indexPath: IndexPath) -> Void)?
 
+    var shouldResetSelection: Bool = true
+    
     var numberOfRows: Int {
         return 10
     }
