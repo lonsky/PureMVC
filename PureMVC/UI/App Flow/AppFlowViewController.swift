@@ -27,13 +27,14 @@ class AppFlowViewController: UIViewController {
             self.showSignInView()
             
         case .signedIn:
-            self.runMasterFlow()
+            switch UIDevice.current.userInterfaceIdiom {
+            case .pad:
+                self.runMainIPadFlow()
+            case .phone:
+                self.runMasterFlow()
+            default:()
+            }
         }
-    }
-    
-    private func runMasterFlow() {
-        let master = MasterFlowViewController(self.session)
-        self.transition(to: master)
     }
     
     private func showSignInView() {
@@ -44,6 +45,16 @@ class AppFlowViewController: UIViewController {
         }
         signIn.viewModel = viewModel
         self.transition(to: signIn)
+    }
+    
+    private func runMainIPadFlow() {
+        let main = MainIPadFlowViewController(self.session)
+        self.transition(to: main)
+    }
+    
+    private func runMasterFlow() {
+        let master = MasterFlowViewController(self.session)
+        self.transition(to: master)
     }
 }
 

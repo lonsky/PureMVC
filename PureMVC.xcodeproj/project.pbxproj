@@ -13,6 +13,7 @@
 		B64B937C204C85A500E14111 /* MasterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64B937B204C85A500E14111 /* MasterViewModel.swift */; };
 		B64B9381204C8C6600E14111 /* ErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64B9380204C8C6600E14111 /* ErrorViewController.swift */; };
 		B64B9383204C8C7F00E14111 /* ErrorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64B9382204C8C7F00E14111 /* ErrorViewModel.swift */; };
+		B64B9386204EB80600E14111 /* MainIPadFlowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64B9385204EB80600E14111 /* MainIPadFlowViewController.swift */; };
 		B6B4ACE820448EDD002E27AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B4ACE720448EDD002E27AA /* AppDelegate.swift */; };
 		B6B4ACEA20448EDD002E27AA /* AppFlowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B4ACE920448EDD002E27AA /* AppFlowViewController.swift */; };
 		B6B4ACED20448EDD002E27AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6B4ACEB20448EDD002E27AA /* Main.storyboard */; };
@@ -40,6 +41,7 @@
 		B64B937B204C85A500E14111 /* MasterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewModel.swift; sourceTree = "<group>"; };
 		B64B9380204C8C6600E14111 /* ErrorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewController.swift; sourceTree = "<group>"; };
 		B64B9382204C8C7F00E14111 /* ErrorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewModel.swift; sourceTree = "<group>"; };
+		B64B9385204EB80600E14111 /* MainIPadFlowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainIPadFlowViewController.swift; sourceTree = "<group>"; };
 		B6B4ACE420448EDD002E27AA /* PureMVC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PureMVC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6B4ACE720448EDD002E27AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6B4ACE920448EDD002E27AA /* AppFlowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlowViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +93,14 @@
 			path = "Error View";
 			sourceTree = "<group>";
 		};
+		B64B9384204EB76200E14111 /* Main Flow iPad */ = {
+			isa = PBXGroup;
+			children = (
+				B64B9385204EB80600E14111 /* MainIPadFlowViewController.swift */,
+			);
+			path = "Main Flow iPad";
+			sourceTree = "<group>";
+		};
 		B6B4ACDB20448EDD002E27AA = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +146,7 @@
 				B6B4AD142045B546002E27AA /* Common */,
 				B6B4AD0E2045B4BA002E27AA /* App Flow */,
 				B6B4AD112045B520002E27AA /* Master Flow */,
+				B64B9384204EB76200E14111 /* Main Flow iPad */,
 				B6B4AD122045B52E002E27AA /* Details Flow */,
 				B6B4AD152045B6D5002E27AA /* Settings Flow */,
 			);
@@ -285,6 +296,7 @@
 				B6B4AD192045B7AC002E27AA /* SettingsViewModel.swift in Sources */,
 				B64B9381204C8C6600E14111 /* ErrorViewController.swift in Sources */,
 				B64B937A204C84AE00E14111 /* MasterViewController.swift in Sources */,
+				B64B9386204EB80600E14111 /* MainIPadFlowViewController.swift in Sources */,
 				B64B9378204C77C800E14111 /* MasterFlowViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
